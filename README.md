@@ -356,12 +356,15 @@ while (order>15)or(order<=0):
     order=int(input("Enter the Number assigned to the dish for your order: "))
     
 quants=int(input("Enter the desired amount you want to order: "))
+print()
 confirmation=(input("Do you Confirm yor Order(y/n): "))
+Print()
 while confirmation=='n':
     print()
     print("Confirmation Cancelled reorder")
     print()
     order=int(input("Enter the Number assigned to the dish for your order: "))
+    print()
     while (order>15)or(order<=0):
         print()
         print("Invalid order enter the correct number")
