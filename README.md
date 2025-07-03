@@ -1,14 +1,24 @@
 
 import pandas as pd
+
 import random as rd
+
 import pyqrcode
+
 import png
+
 from pyqrcode import QRCode
+
 bill=0
+
 result=0
+
 gst=0
+
 total=0
+
 def cost(x,a,b,c,d,e,f):
+
     print()
     print("BILL")
     print()
@@ -255,45 +265,84 @@ def cost(x,a,b,c,d,e,f):
         df=pd.DataFrame(ledger)
         print(df)
         print("Thank You for Ordering")
+        
 name=input("Enter your name:-" )
+
 while (name==""):
+
     print()
+
     print("please enter a valid name")
+    
     print()
+    
     name=input("Enter your name:-" )
+
 else:
+
     print()
+    
     print("Welcome to THE RESTAURANT",name)
+
 print()
+
 b=str(input("Enter your Phone number or Email Id for OTP verification: "))
+
 while (b==""):
+
     print()
+    
     print("please enter a valid number or email")
+    
     print()
+    
     b=str(input("Enter your Phone number or Email Id for OTP verification: "))
+    
 else:
+  
     print()
+
 print()
+
 a=str(rd.randint(0,9))+str(rd.randint(0,9))+str(rd.randint(0,9))+str(rd.randint(0,9))
+
 print(a)
+
 print()
+
 b=str(input("Enter the Otp:- "))
+
 while (a!=b):
+
     print()
+    
     print("Incorrect Otp ")
+    
     print()
+    
     a=str(rd.randint(0,9))+str(rd.randint(0,9))+str(rd.randint(0,9))+str(rd.randint(0,9))
+    
     print(a)
+    
     print()
+    
     b=str(input("Enter the Otp:- "))
         
+
 else:
+
     print()
+    
     print("Otp verified Successfully")
+
 print()
+
 print("Scan the QRCode from All files for opening the Menu please.")
+
 print()
+
 print("The File name is restaurant_menu.")
+
 data="""Menu
 
 Choose our Delicacies which Delight you.
@@ -332,49 +381,87 @@ Enter the number assigned to the Dish as for you to order it.
 
 """
 url=pyqrcode.create(data)
-url.svg("restaurant_menu.svg",scale=8)
-url.png("restaurant_menu.png",scale=6)
-print()
-ask=input("Have you decided what to order(y/n):")
-while ask=='n':
-    print()
-    print("Go through the Menu again")
-    print()
-    ask=input("Have you decided what to order(y/n):")
-else:
-    print()
-print()
-print("Order from 1 - 15 delicious dishes from the menu and enjoy")
-print()
-order=int(input("Enter the Number assigned to the dish for your order: "))
 
-          
+url.svg("restaurant_menu.svg",scale=8)
+
+url.png("restaurant_menu.png",scale=6)
+
+print()
+
+ask=input("Have you decided what to order(y/n):")
+
+while ask=='n':
+
+    print()
+    
+    print("Go through the Menu again")
+    
+    print()
+    
+    ask=input("Have you decided what to order(y/n):")
+
+else:
+
+    print()
+
+print()
+
+print("Order from 1 - 15 delicious dishes from the menu and enjoy")
+
+print()
+
+order=int(input("Enter the Number assigned to the dish for your order: "))
+         
 while (order>15)or(order<=0):
+
     print()
+    
     print("Invalid order enter the correct number")
+    
     print()
+    
     order=int(input("Enter the Number assigned to the dish for your order: "))
     
 quants=int(input("Enter the desired amount you want to order: "))
+
 print()
+
 confirmation=(input("Do you Confirm yor Order(y/n): "))
+
 Print()
+
 while confirmation=='n':
+
     print()
+    
     print("Confirmation Cancelled reorder")
+    
     print()
+    
     order=int(input("Enter the Number assigned to the dish for your order: "))
+    
     print()
+    
     while (order>15)or(order<=0):
+    
         print()
+        
         print("Invalid order enter the correct number")
+        
         print()
+        
         order=int(input("Enter the Number assigned to the dish for your order: "))
+    
     print()
+    
     quants=int(input("Enter the desired amount you want to order: "))
+    
     print()
+    
     confirmation=(input("Do you Confirm yor Order(y/n): "))
+
 print()
+
 cost(name,order,quants,result,gst,bill,total)
 
     
